@@ -1,3 +1,20 @@
+
+document.getElementById("celcius").addEventListener("click", function(){
+    tempType = true;
+    document.getElementById("celcius").style.color = "#F67280";
+    document.getElementById("fahrenheit").style.color = "#AAAAAA";
+    changeTempType()
+}) 
+document.getElementById("fahrenheit").addEventListener("click", function(){
+    tempType = false;
+    document.getElementById("fahrenheit").style.color = "#F67280";
+    document.getElementById("celcius").style.color = "#AAAAAA";
+    changeTempType()
+}) 
+
+var temp;
+var tempType = true;
+
 window.addEventListener("load", ()=> {
 
     let long;
@@ -27,30 +44,56 @@ window.addEventListener("load", ()=> {
                 .then(data => {
 
                     console.log(data)
+
                     const {temperature, summary, icon} = data.currently;
+                    const daily = data.daily.data;
+
+                    temp = temperature;
+                    console.log(daily);
 
                     //set DOM Elements 
-                    document.getElementById("degree").innerHTML = convertCelcius(temperature);
+                    document.getElementById("degree").innerHTML = convertCelcius(temp, tempType);
                     document.getElementById("location").innerHTML = city;
                     document.getElementById("summary").innerHTML = summary;
 
-                    //set Icon
+                    let containerForcast = document.getElementById("container-forecast");
+                    let containerItemsForcast = containerForcast.children;
+
+                    for(let i = 0; i < containerItemsForcast.length; i++)
+                    {
+                        containerItemsForcast[i].innerHTML = daily[i].summary;
+                    }
+
+                    //set today icon
                     setIcons(icon, document.querySelector("#icon"));
                 })
         })
+})
 
-    function setIcons(icon, iconID)
+function setIcons(icon, iconID)
     {
-        const skycons = new Skycons({ color: "black" });
+        const skycons = new Skycons({ color: "white" });
         const currentIcon = icon.replace(/-/g, "_").toUpperCase();
         skycons.play();
         return skycons.set(iconID, Skycons[currentIcon]);
     }
 
-    function convertCelcius(fahrenheit)
+function convertCelcius(degree, tempType)
+{
+    if(tempType)
     {
-        let celcius = Math.round((5/9) * (fahrenheit - 32) * 100) / 100;
-        return celcius;
+        return  Math.round((5/9) * (degree - 32) * 100) / 100 + " °C";
     }
-})
+    
+    if(!tempType)
+    {
+        return degree * 9 / 5 + 32 + " °F";
+    }
+}
+
+function changeTempType()
+{
+    document.getElementById("degree").innerHTML = convertCelcius(temp, tempType);
+}
+
 

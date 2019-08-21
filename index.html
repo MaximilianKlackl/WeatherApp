@@ -7,10 +7,42 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
-        <div id="location"></div>
-        <div id="degree"></div>
-        <div id="summary"></div>
-        <canvas id="icon" width="128" height="128" alt="Icon"></canvas>
+        <header>
+            <img src="Images/logo.svg" id="logo">
+            <div id="select-temp">
+                <button id="celcius">°C</button>
+                <button id="fahrenheit">°F</button>
+            </div>
+        </header>
+
+        <section id="section-today">
+            <div id="container-today">
+                <div id="location-degree-container">
+                    <div id="location"></div>
+                    <div id="degree"></div>
+                </div>
+                <canvas id="icon" width="128" height="128" alt="Icon" class="item-today"></canvas>
+                <div id="summary"></div>
+            </div>
+        </section>
+        
+        <section id="section-forecast">
+            <div id="container-forecast">
+                <div class="item-forecast"></div>
+                <div class="item-forecast"></div>
+                <div class="item-forecast"></div>
+                <div class="item-forecast"></div>
+                <div class="item-forecast"></div>
+                <div class="item-forecast"></div>
+                <div class="item-forecast"></div>
+                <div class="item-forecast"></div>
+            </div>
+        </section>
+
+        <footer>
+            
+        </footer>
+
         <script type="text/javascript" src="app.js"></script> 
         <script type="text/javascript" src="skycons.js"></script> 
     </body>

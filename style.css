@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Merriweather|Montserrat&display=swap');
+
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'Merriweather', serif;
+font-family: 'Josefin Sans', sans-serif;
+*/
+
+html 
+{
+    height: 100%;
+}
+
+body 
+{
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(to right top, #C06C84, #40527E);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header
+{
+    height: 10vh;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+header img
+{
+    width: 200px;
+    margin-left: 20px;
+    margin-top: 35px;
+}
+
+#select-temp
+{
+    width: 80px;
+    height: 30px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    border-radius: 20px;
+}
+
+#celcius, #fahrenheit
+{
+    background-color: white;
+    border: 0;
+    width: 60px;
+    color: #AAAAAA;
+}
+
+#fahrenheit
+{
+    border-radius: 0 20px 20px 0;
+}
+
+#celcius
+{
+    border-radius: 20px 0 0 20px;
+    color: #F67280;
+}
+
+#celcius:focus, #fahrenheit:focus
+{
+    outline: none;
+    background-color: rgb(255, 234, 236);
+}
+
+#section-today
+{
+    width: 100%;
+    height: 90vh;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    font-size: 1.2em;
+}
+
+#container-today
+{
+    width: 458px;
+    height: 128px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    top: 30%;
+    display: flex;
+    align-items: center;
+}
+
+#location-degree-container
+{
+    width: 150px;
+    position: relative;
+    top: 15px;
+}
+
+#summary
+{
+    width: 180px;
+    position: relative;
+    top: 15px;
+}
+
+
+#section-forecast
+{
+    background-color: rgb(255, 255, 255);
+    height: 500px;
+    width: 100%;
+}
+
+#container-forecast
+{
+    color: #323450;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Merriweather', serif;
+}
+
+footer
+{
+    height: 200px;
+    width: 100%;
+    background-color: #323450;
+}
