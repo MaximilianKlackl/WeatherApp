@@ -21,10 +21,10 @@ window.addEventListener("load", ()=> {
     let lat;
 
     const proxy = "http://cors-anywhere.herokuapp.com/";
-    const apiIpStack = "http://api.ipstack.com/check?access_key=fe86dbb2256b138059371429fd37c3c3"
+    const ipApi = "https://ipapi.co/json/"
 
     //get Location
-    fetch("https://ipapi.co/json/")
+    fetch(ipApi)
         .then(response => {
             return response.json();
         })
