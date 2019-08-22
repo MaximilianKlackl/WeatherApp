@@ -87,7 +87,9 @@ function convertCelcius(degree, tempType)
     
     if(!tempType)
     {
-        return degree * 9 / 5 + 32 + " °F";
+        return Math.round((degree * 9 / 5 + 32) * 100) / 100 + " °F";
+
+        
     }
 }
 
