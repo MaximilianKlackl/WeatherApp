@@ -1,4 +1,8 @@
 
+var tempType = true;
+var fahrenheit; 
+var celcius;
+
 document.getElementById("celcius").addEventListener("click", function(){
     tempType = true;
     document.getElementById("celcius").style.color = "#F67280";
@@ -11,9 +15,6 @@ document.getElementById("fahrenheit").addEventListener("click", function(){
     document.getElementById("celcius").style.color = "#AAAAAA";
     changeTempType()
 }) 
-
-var temp;
-var tempType = true;
 
 window.addEventListener("load", ()=> {
 
@@ -48,11 +49,11 @@ window.addEventListener("load", ()=> {
                     const {temperature, summary, icon} = data.currently;
                     const daily = data.daily.data;
 
-                    temp = temperature;
+                    fahrenheit = temperature;
                     console.log(daily);
 
                     //set DOM Elements 
-                    document.getElementById("degree").innerHTML = convertCelcius(temp, tempType);
+                    document.getElementById("degree").innerHTML = convertCelcius(fahrenheit, tempType);
                     document.getElementById("location").innerHTML = city;
                     document.getElementById("summary").innerHTML = summary;
 
@@ -78,24 +79,22 @@ function setIcons(icon, iconID)
         return skycons.set(iconID, Skycons[currentIcon]);
     }
 
-function convertCelcius(degree, tempType)
+function convertCelcius(tempType)
 {
     if(tempType)
     {
-        return  Math.round((5/9) * (degree - 32) * 100) / 100 + " °C";
+        return  Math.round((5/9) * (fahrenheit - 32) * 100) / 100 + " °C";
     }
     
     if(!tempType)
     {
-        return Math.round((degree * 9 / 5 + 32) * 100) / 100 + " °F";
-
-        
+        return fahrenheit + " °F";
     }
 }
 
 function changeTempType()
 {
-    document.getElementById("degree").innerHTML = convertCelcius(temp, tempType);
+    document.getElementById("degree").innerHTML = convertCelcius(tempType);
 }
 
 
