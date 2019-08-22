@@ -24,7 +24,7 @@ window.addEventListener("load", ()=> {
     const apiIpStack = "http://api.ipstack.com/check?access_key=fe86dbb2256b138059371429fd37c3c3"
 
     //get Location
-    fetch(apiIpStack)
+    fetch("https://ipapi.co/json/")
         .then(response => {
             return response.json();
         })
