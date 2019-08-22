@@ -20,7 +20,7 @@ window.addEventListener("load", ()=> {
     let long;
     let lat;
 
-    const proxy = "http://cors-anywhere.herokuapp.com/";
+    const proxy = "https://cors-anywhere.herokuapp.com/";
     const ipApi = "https://ipapi.co/json/"
 
     //get Location
