@@ -163,6 +163,11 @@ font-family: 'Josefin Sans', sans-serif;
         font-family: 'Merriweather', serif;
     }
 
+    #swipe-icon
+    {
+        display: none;
+    }
+
     footer
     {
         height: 200px;
@@ -275,8 +280,7 @@ font-family: 'Josefin Sans', sans-serif;
 
     #container-today
     {
-        width: 400px;
-        height: 600px;
+        width: 200px;
         margin: 0 auto;
         text-align: center;
         position: relative;
@@ -294,7 +298,7 @@ font-family: 'Josefin Sans', sans-serif;
 
     #summary
     {
-        width: 180px;
+        width: 100px;
         position: relative;
         top: 15px;
         margin: 0 auto;
@@ -313,16 +317,25 @@ font-family: 'Josefin Sans', sans-serif;
         color: #323450;
         display: flex;
         justify-content: space-between;
-        max-width: 1000px;
+        width: 100%;
         margin: 0 auto;
         position: relative;
-        top: 75px;
+        top: 55px;
+        
+        overflow-x: scroll;
+        word-break: break-word;
+    }
+
+    #container-forecast::-webkit-scrollbar 
+    {
+        display: none;
     }
 
     .item-forecast
     {
         width: 155px;
         color: black;
+        display: inline-block;
     }
 
     .forecast-date
@@ -351,6 +364,14 @@ font-family: 'Josefin Sans', sans-serif;
         margin-top: 20px;
         text-align: center;
         font-family: 'Merriweather', serif;
+    }
+
+    #swipe-icon
+    {
+        width: 25px;
+        position: relative;
+        top: 100px;
+        left: 45%;
     }
 
     footer
